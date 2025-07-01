@@ -1,0 +1,253 @@
+*{ margin: 0;
+box-sizing: border-box;}
+
+body{height: 100vh;
+display: grid;
+grid-template-columns: 90px 1fr;
+overflow: hidden;
+font-family: "Montserrat", sans-serif;}
+
+#sociais{
+    display: flex;
+    align-items: center;
+    
+}
+
+#menu {
+    display: grid;
+    grid-template-rows: 90px 1fr;
+    height: 100vh;
+    box-shadow: 14px 0px 103px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+}
+
+.menu_simbolo {
+    height: 90px;
+    width: 90px;
+    background: #0f0f0f;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+
+aside {
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    left: -280px;
+    top: 0;
+    overflow-y: auto;
+    box-shadow: 14px 0px 103px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    z-index: 9999;
+    transition: 0.5s;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 90px 1fr;
+
+}
+
+#check,
+#check2 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#check:checked+aside {
+    left: 0;
+    transition: 0.5s;
+}
+
+.menu_voltar {
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site_logo {
+    background-color: #2916e0;
+}
+
+.site_logo a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_texto {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opcoes_menu {
+    margin-top: 55%;
+}
+
+.link_menu {
+    line-height: 1.5;
+    height: 305px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link_menu a {
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.5s;
+}
+
+.pag_atual {
+    color: #2916e0;
+}
+
+.resto {
+    color: #b2b2b2;
+}
+
+.resto:hover {
+    color: #2916e0;
+    transition: 0.5s;
+}
+
+.menu_extra {
+    position: absolute;
+    bottom: 5%;
+    fill: #b2b2b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_extra ul {
+    width: 180px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0%;
+}
+
+.texto_fim {
+    margin-top: 1vh;
+    text-align: center;
+    font-size: 15px;
+    color: #636363;
+    line-height: 1.8;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    width: 240px;
+}
+
+.texto_fim span {
+    font-size: 17px;
+    -webkit-text-stroke: 1px #e21010;
+    -webkit-text-fill-color: transparent;
+}
+
+.texto_fim a {
+    color: #b2b2b2;
+    text-decoration: none;
+}
+
+.texto_fim a:hover {
+    color: #2916e0;
+}
+
+#menu-side{width: 90px;
+height: 90px;
+background-color: #1f1f1f;
+display: flex;
+align-items: center;
+justify-content: center;}
+
+.menu_social {
+    width: 100%;
+    display: flex;
+    flex-flow: column ;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu_social ul {
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+.svg_menu {
+    margin-bottom: 50px;
+}
+
+.final_menu {
+    margin-bottom: 0;
+}
+
+.menu_social svg {
+    fill: #252525;
+}
+
+#imagens{display: flex;
+width: 100%;}
+
+#mulher{ background-image: url(imagem1.jpg);}
+#cachorro{ background-image: url(imagem2.jpg);}
+#mar{ background-image: url(imagem3.jpg);}
+#carro{ background-image: url(imagem4.jpg);}
+#calango{ background-image: url(imagem5.jpg);
+flex-grow: 7;
+background-color: transparent;
+order: -1;}
+
+.img-item{flex-grow: 1;
+position: relative;
+transition: 0.4s;
+background-size: cover;
+background-position: 20% 0;
+background-color: rgba(0, 0, 0, 0.5);
+background-blend-mode: multiply;}
+
+.img-item:hover{flex-grow: 7;
+background-color: transparent;
+box-shadow: inset 0 -100px 150px;}
+
+.img-item:hover~#calango{flex-grow: 1;
+background-color: rgba(0, 0, 0, 0.5);}
+
+.img-item:hover~#calango .textos{opacity: 0;
+bottom: 30%;}
+
+.textos{color: white;
+position:absolute;
+bottom: 30%;
+left: 5%;
+text-wrap: nowrap;
+opacity: 0;
+transition: 0.4s;
+font-size: xx-large;}
+
+#calango .textos {opacity: 1;
+bottom: 10%;}
+
+.img-item:hover .textos {opacity: 1;
+bottom: 10%;}
+
+.textos img{border-radius: 50%;}
